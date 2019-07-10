@@ -12,6 +12,9 @@ class Aviatrix {
     
     var running = false
     var author = ""
+    //WHERE DOES IT SAY TO CODE THIS IN??
+    var data = AviatrixData()
+    var location = "St. Louis"
     
     init(authorName : String) {
         author = authorName
@@ -27,14 +30,16 @@ class Aviatrix {
     }
     
     func flyTo(destination : String) {
-        
+        location = destination
     }
     
-    func distanceTo(target : String) {
+    //DON'T FORGET YOU NEED THE ARROWS WITH THE RETURN!!
+    func distanceTo(location : String, target : String) -> Int {
+        return data.knownDistances[location]![target]!
     
     }
     
     func knownDestinations() -> [String] {
-       return ["St. Louis"]
+       return ["St. Louis", "Phoenix", "Denver", "SLC"]
     }
 }
